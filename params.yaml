@@ -1,0 +1,17 @@
+load_data:
+  root: "/home/hoawenlo/Programming/Python/pytorch_practice/img_class_with_dvc/cifar-100-python"
+  train: True
+  val: False
+
+prepare_data:
+  batchsize: 32
+  shuffle: True
+
+train:
+  torch_params: # Just descriptors for logging.
+    model: convnet
+    loss_fn: CrossEntropyLoss
+    optimiser: Adam
+  learning_rate: 0.001
+  n_epochs: 13
+  training_log_verboseness: 1
