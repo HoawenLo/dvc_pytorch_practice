@@ -1,3 +1,7 @@
 *.pyc
 
 /venv
+
+/data
+
+metric_vals.pkl
