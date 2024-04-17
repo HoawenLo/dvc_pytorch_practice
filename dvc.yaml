@@ -1,0 +1,7 @@
+stages:
+  train_model:
+    cmd: python3 train_model.py --config=params.yaml
+    params:
+    - train
+    outs:
+    - results/metric_data.pkl

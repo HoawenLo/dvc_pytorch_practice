@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  train_model:
+    cmd: python3 train_model.py --config=params.yaml
+    params:
+      params.yaml:
+        train:
+          torch_params:
+            model: convnet
+            loss_fn: CrossEntropyLoss
+            optimiser: Adam
+          learning_rate: 0.001
+          n_epochs: 3
+          training_log_verboseness: 1
+    outs:
+    - path: results/metric_data.pkl
+      md5: ac4441179efab0dc6b2f6b867ae78730
+      size: 204

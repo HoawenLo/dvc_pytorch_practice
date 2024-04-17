@@ -9,6 +9,7 @@ from src.data.prepare_data import apply_transformation, create_dataloader
 from src.models.convnet import Model
 from src.models.model_stages import training_loop
 from src.logging.log import get_logger
+from src.export_data.export import export_metrics
 
 def train_model(config_path):
     """Master function. Loads in data, prepares data and trains model.
@@ -51,7 +52,7 @@ def train_model(config_path):
     else:
         device = "cpu"
 
-    train_loss_val, train_acc_vals, val_loss_vals, val_acc_vals = training_loop(
+    train_loss_vals, train_acc_vals, val_loss_vals, val_acc_vals = training_loop(
         n_epochs = config["train"]["n_epochs"],
         optimiser=optimiser,
         model=model,
@@ -63,7 +64,12 @@ def train_model(config_path):
         data_shape=data_shape
     )
 
-    return train_loss_val, train_acc_vals, val_loss_vals, val_acc_vals
+    metric_data = {"train_loss_val":train_loss_vals,
+                   "train_acc_val":train_acc_vals,
+                   "val_loss_vals":val_loss_vals,
+                   "val_acc_vals":val_acc_vals}
+
+    export_metrics(config, metric_data)
 
 if __name__ == "__main__":
     # Create an parser
