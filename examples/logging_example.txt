@@ -1,0 +1,117 @@
+dvc repro --force
+Running stage 'train_model':                                          
+> python3 train_model.py --config=params.yaml
+2024-06-15 16:20:49,613 — Load data — INFO — Importing training and validation dataset CIFAR100 from /home/hoawenlo/Programming/Python/pytorch_practice/cnn_dvc_project/data/cifar-100-python
+2024-06-15 16:20:52,822 — Load data — INFO — Data loaded.
+2024-06-15 16:20:52,822 — Load data — INFO — Extract images from dataset.
+2024-06-15 16:21:03,229 — Load data — INFO — Images extracted from training and validation dataset. Training image dataset has shape: torch.Size([50000, 3, 32, 32]) Validation image dataset has shape: torch.Size([10000, 3, 32, 32])
+2024-06-15 16:21:03,229 — Load data — INFO — Extract labels from dataset.
+2024-06-15 16:21:09,396 — Load data — INFO — Labels extracted from training and validation dataset. Training label dataset has shape: torch.Size([50000]) Validation label dataset has shape: torch.Size([10000])
+2024-06-15 16:21:09,397 — Prepare data. — INFO — Calculate mean and standard deviation.
+2024-06-15 16:21:12,891 — Prepare data. — INFO — Mean of colour channels: tensor([0.5071, 0.4866, 0.4409])Standard deviation of colour channels: tensor([0.2673, 0.2564, 0.2762])
+2024-06-15 16:21:12,892 — Prepare data. — INFO — Apply normalise tranformation
+2024-06-15 16:21:13,643 — Prepare data. — INFO — Calculate mean and standard deviation.
+2024-06-15 16:21:13,643 — Prepare data. — INFO — Calculate mean and standard deviation.
+2024-06-15 16:21:13,716 — Prepare data. — INFO — Mean of colour channels: tensor([0.5088, 0.4874, 0.4419])Standard deviation of colour channels: tensor([0.2683, 0.2574, 0.2771])
+2024-06-15 16:21:13,716 — Prepare data. — INFO — Mean of colour channels: tensor([0.5088, 0.4874, 0.4419])Standard deviation of colour channels: tensor([0.2683, 0.2574, 0.2771])
+2024-06-15 16:21:13,716 — Prepare data. — INFO — Apply normalise tranformation
+2024-06-15 16:21:13,716 — Prepare data. — INFO — Apply normalise tranformation
+2024-06-15 16:21:13,756 — Setup Dataloader — INFO — Loading data into CustomDataset class.
+2024-06-15 16:21:13,756 — Setup Dataloader — INFO — Create data loader from custom dataset with batchsize: 32, shuffle: True
+2024-06-15 16:21:13,757 — Setup Dataloader — INFO — Loading data into CustomDataset class.
+2024-06-15 16:21:13,757 — Setup Dataloader — INFO — Loading data into CustomDataset class.
+2024-06-15 16:21:13,757 — Setup Dataloader — INFO — Create data loader from custom dataset with batchsize: 32, shuffle: True
+2024-06-15 16:21:13,757 — Setup Dataloader — INFO — Create data loader from custom dataset with batchsize: 32, shuffle: True
+2024-06-15 16:21:13,757 — Train — INFO — Initialise model: convnet
+2024-06-15 16:21:13,757 — Train — INFO — Initialise loss function: CrossEntropyLoss
+2024-06-15 16:21:13,757 — Train — INFO — Initialise optimiser: Adam
+2024-06-15 16:21:32,454 — Train — INFO — Providing model summary
+2024-06-15 16:21:32,454 — Train — INFO — Providing model summary
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1          [-1, 128, 32, 32]           3,584
+              ReLU-2          [-1, 128, 32, 32]               0
+         MaxPool2d-3          [-1, 128, 16, 16]               0
+            Conv2d-4           [-1, 64, 16, 16]          73,792
+              ReLU-5           [-1, 64, 16, 16]               0
+         MaxPool2d-6             [-1, 64, 8, 8]               0
+            Conv2d-7             [-1, 32, 8, 8]          18,464
+              ReLU-8             [-1, 32, 8, 8]               0
+         MaxPool2d-9             [-1, 32, 4, 4]               0
+          ConvNet-10             [-1, 32, 4, 4]               0
+           Linear-11                  [-1, 512]         262,656
+             ReLU-12                  [-1, 512]               0
+           Linear-13                  [-1, 256]         131,328
+             ReLU-14                  [-1, 256]               0
+           Linear-15                  [-1, 100]          25,700
+FullyConnectedNet-16                  [-1, 100]               0
+================================================================
+Total params: 515,524
+Trainable params: 515,524
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 2.58
+Params size (MB): 1.97
+Estimated Total Size (MB): 4.56
+----------------------------------------------------------------
+2024-06-15 16:21:45,189 — Train — INFO — Training model with optimiser: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.001
+    maximize: False
+    weight_decay: 0
+)
+with loss function: CrossEntropyLoss()
+with number of epochs: 3
+with training_log_verboseness: 1
+Training device: cuda
+2024-06-15 16:21:45,189 — Train — INFO — Training model with optimiser: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.001
+    maximize: False
+    weight_decay: 0
+)
+with loss function: CrossEntropyLoss()
+with number of epochs: 3
+with training_log_verboseness: 1
+Training device: cuda
+2024-06-15 16:21:45,190 — Train — INFO — Commencing training.
+2024-06-15 16:21:45,190 — Train — INFO — Commencing training.
+/home/hoawenlo/.local/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+2024-06-15 16:22:12.561260, Epoch 1, Training loss 3.6765787831804957, Validation loss 3.178628017346318, Training Accuracy 0.22876, Validation Accuracy 0.2203
+2024-06-15 16:22:28.439828, Epoch 2, Training loss 2.9388803287110723, Validation loss 2.8424200029038014, Training Accuracy 0.31738, Validation Accuracy 0.2886
+2024-06-15 16:22:43.884477, Epoch 3, Training loss 2.5509363318282827, Validation loss 2.5585386749273673, Training Accuracy 0.4055, Validation Accuracy 0.3548
+2024-06-15 16:22:43,884 — Train — INFO — Training complete.
+2024-06-15 16:22:43,884 — Train — INFO — Training complete.
+2024-06-15 16:22:43,885 — Export metrics — INFO — Exporting training loss, validation loss, training accuracy and validation accuracy.
+2024-06-15 16:22:43,885 — Export metrics — INFO — Destination filepath: /home/hoawenlo/Programming/Python/pytorch_practice/cnn_dvc_project/results/
+2024-06-15 16:22:43,885 — Export metrics — INFO — Creating filename.
+2024-06-15 16:22:43,885 — Export metrics — INFO — Filename: metric_data_2024-06-15_16-22-43.pkl
+2024-06-15 16:22:43,885 — Export metrics — INFO — Exporting metric_data_2024-06-15_16-22-43.pkl to destination filepath /home/hoawenlo/Programming/Python/pytorch_practice/cnn_dvc_project/results/.
+2024-06-15 16:22:43,885 — Export metrics — INFO — Export completed.
+Updating lock file 'dvc.lock'                                                                                                                                                                                                                                        
+
+To track the changes with git, run:
+
+        git add dvc.lock
+
+To enable auto staging, run:
+
+        dvc config core.autostage true
+Use `dvc push` to send your updates to remote storage.

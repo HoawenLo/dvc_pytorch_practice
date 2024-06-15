@@ -1,0 +1,6 @@
+Pipeline commands
+
+python train_model.py --config=params.yaml
+
+dvc repro > Reproduce pipeline
+dvc exp run > Run the pipeline, run an experiment

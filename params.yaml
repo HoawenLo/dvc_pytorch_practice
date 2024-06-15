@@ -8,7 +8,7 @@ prepare_data:
   shuffle: True
 
 train:
-  torch_params: # Just descriptors for logging.
+  torch_params:
     model: convnet
     loss_fn: CrossEntropyLoss
     optimiser: Adam
