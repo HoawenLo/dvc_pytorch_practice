@@ -10,9 +10,12 @@ stages:
             loss_fn: CrossEntropyLoss
             optimiser: Adam
           learning_rate: 0.001
-          n_epochs: 3
+          n_epochs: 8
           training_log_verboseness: 1
     outs:
     - path: results/metric_data.pkl
-      md5: 506cdf830b378a9f93c44bd80afa43c1
-      size: 204
+      md5: 6ff16d2777c1ec021a9693ad846b7bfe
+      size: 386
+    - path: results/results.json
+      md5: 8312e0aabc9812ea3cdea15f63d67ecc
+      size: 171

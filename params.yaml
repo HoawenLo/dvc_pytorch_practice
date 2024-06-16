@@ -1,11 +1,12 @@
 load_data:
-  root: "/home/hoawenlo/Programming/Python/pytorch_practice/cnn_dvc_project/data/cifar-100-python"
-  train: True
-  val: False
+  root: 
+    /home/hoawenlo/Programming/Python/pytorch_practice/cnn_dvc_project/data/cifar-100-python
+  train: true
+  val: false
 
 prepare_data:
   batchsize: 32
-  shuffle: True
+  shuffle: true
 
 train:
   torch_params:
@@ -13,8 +14,10 @@ train:
     loss_fn: CrossEntropyLoss
     optimiser: Adam
   learning_rate: 0.001
-  n_epochs: 3
+  n_epochs: 8
   training_log_verboseness: 1
 
 export_data:
-  dst_filepath: "/home/hoawenlo/Programming/Python/pytorch_practice/cnn_dvc_project/results/"
+  dst_filepath: /home/hoawenlo/Programming/Python/pytorch_practice/cnn_dvc_project/results/
+  json_filepath: 
+    /home/hoawenlo/Programming/Python/pytorch_practice/cnn_dvc_project/results/results.json

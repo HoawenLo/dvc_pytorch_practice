@@ -5,3 +5,6 @@ stages:
     - train
     outs:
     - results/metric_data.pkl
+    metrics:
+    - results/results.json:
+        cache: false

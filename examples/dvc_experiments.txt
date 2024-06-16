@@ -1,0 +1,11 @@
+ ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────>
+  Experiment                 Created    average_train_loss   average_train_acc   average_val_loss   average_val_acc   train.n_epochs   export_data.json_filepath                                                >
+ ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────>
+  workspace                  -                      2.9241             0.32047             2.8655           0.28644   5                /home/hoawenlo/Programming/Python/pytorch_practice/cnn_dvc_project/result>
+  main                       04:34 PM                    -                   -                  -                 -   3                -                                                                        >
+  ├── 54d7de0 [loamy-wart]   05:52 PM                    -                   -                  -                 -   5                /home/hoawenlo/Programming/Python/pytorch_practice/cnn_dvc_project/result>
+  ├── 66d0a62 [muddy-luke]   05:50 PM               2.2997             0.45954             2.6699           0.34202   10               /home/hoawenlo/Programming/Python/pytorch_practice/cnn_dvc_project/result>
+  └── de19515 [sunny-funs]   05:35 PM                    -                   -                  -                 -   3                -                                                                        >
+ ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────>
+
+ 

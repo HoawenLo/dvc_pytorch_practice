@@ -64,8 +64,8 @@ def train_model(config_path):
         data_shape=data_shape
     )
 
-    metric_data = {"train_loss_val":train_loss_vals,
-                   "train_acc_val":train_acc_vals,
+    metric_data = {"train_loss_vals":train_loss_vals,
+                   "train_acc_vals":train_acc_vals,
                    "val_loss_vals":val_loss_vals,
                    "val_acc_vals":val_acc_vals}
 

@@ -1,10 +1,8 @@
 # dvc_pytorch_practice
 
-# MLOps_demo
-
 ## Introduction
 
-This is a simple demonstration repository for the MLOPs presentation.
+This is a simple demonstration for using DVC.
 
 ## Getting started
 
