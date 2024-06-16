@@ -1,0 +1,38 @@
+├── README.md                       <--- README file
+├── file_structure.txt              <--- Project strcture
+├── requirements.txt                <--- Python libraries
+│
+├── data.dvc                        <--- DVC file for data directory
+├── dvc.yaml                        <--- dvc yaml, store pipeline stages
+├── params.yaml                     <--- params yaml, holds parameters for pipeline
+│
+├── train_model.py                  <--- train_model.py, master script to train model
+│
+├── data                            <--- Holds all data
+│   └── cifar-100-python            
+│       └── cifar-100-python
+│           ├── file.txt~
+│           ├── meta
+│           ├── test
+│           └── train
+│
+├── results                         <--- Results of training are stored here
+│
+├── src                             <--- Holds all scripts; source
+│   ├── data                        <--- Scripts related to data
+│   │   ├── load_data.py
+│   │   └── prepare_data.py
+│   ├── export_data                 <--- Scripts related to exporting results
+│   │   └── export.py
+│   ├── logging                     <--- Scripts related to logging
+│   │   └── log.py
+│   ├── metrics                     <--- Scripts related to metrics to measure how well model is doing
+│   │   └── metrics.py
+│   └── models                      <--- Scripts related to model
+│       ├── convnet.py
+│       └── model_stages.py
+│
+├── tmp                             <--- Remote storage for DVC
+│   └── data
+│
+└── prototype.ipynb                 <--- Jupyter notebook for original prototyping
